@@ -30,7 +30,7 @@ open out/groups.json
 open out/groups.json
   | where tradition =~ 'Theravada'
   | filter {|row| $row.address
-    | regex '(?:12|34|56|78)\d{3}'
+    | parse -r '(?:12|34|56|78)\d{3}'
     | is-not-empty
   }
 ```
